@@ -18,6 +18,10 @@ import { RestainfoComponent } from './restainfo/restainfo.component';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { RestaService } from './resta.service';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { Page1Component } from './page1/page1.component';
+import { Page2Component } from './page2/page2.component';
+import { Page3Component } from './page3/page3.component';
+import { PageService } from './page.service';
 
 const appRoutes: Routes = [
   {
@@ -47,6 +51,21 @@ component: RestaComponent
 path: 'restainfo/:rid',
 component: RestainfoComponent
 }
+,
+{
+path: 'page1',
+component: Page1Component
+}
+,
+{
+path: 'page2',
+component: Page2Component
+}
+,
+{
+path: 'page3',
+component: Page3Component
+}
 ];
 
 @NgModule({
@@ -57,7 +76,10 @@ component: RestainfoComponent
     MenuInfoComponent,
     RestaComponent,
     RestainfoComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    Page1Component,
+    Page2Component,
+    Page3Component
   ],
   imports: [
     BrowserModule,
@@ -79,7 +101,7 @@ component: RestainfoComponent
 
 
   ],
-  providers: [MenuService,RestaService],
+  providers: [MenuService,RestaService,PageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+  <div align="center">
+    <mat-card-title>
+      <h2>รายการโปรโมชัน</h2>
+    </mat-card-title>
+    <mat-list>
+      <div *ngFor="let dis of promo">
+        <mat-card-content>
+          <mat-divider></mat-divider>
+          <a mat-button routerLink="/page3/{{dis.id}}">{{dis.name}}</a>
+          <mat-divider></mat-divider>
+        </mat-card-content>
+      </div>
+    </mat-list>
+  </div>
+  <br>
+  <div align="center" class="button-row">
+    <a mat-raised-button routerLink="/page2" color="warn">+Create</a>
+  </div>
+</mat-card>

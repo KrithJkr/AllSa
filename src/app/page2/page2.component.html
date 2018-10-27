@@ -1,0 +1,65 @@
+<mat-card class="example-card">
+  <div style="text-align:center">
+    <br>
+    <h1>
+      Create your own promotion!
+    </h1>
+  </div>
+  <div style="text-align:center">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Promotion Name" [(ngModel)]="PromotionName">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Promotion Title" [(ngModel)]="PromotionTitle"></textarea>
+    </mat-form-field>
+
+  </div>
+  <div style="text-align:center">
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Duration" [(ngModel)]="PromotionDuration"></textarea>
+    </mat-form-field>
+  </div>
+  <div style="text-align:center">
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Start Date" [(ngModel)]="Startdate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <a>&nbsp;&nbsp; untill &nbsp;&nbsp;</a>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker1" placeholder="End Date" [(ngModel)]="Enddate">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <br>
+  </div>
+  <div style="text-align:center">
+    <h2>Select Category</h2>
+    <mat-radio-group [(ngModel)]="PromotionType">
+      <mat-radio-button value=1>%</mat-radio-button>
+      <a>&nbsp;&nbsp;&nbsp;</a>
+      <mat-radio-button value=2>$ </mat-radio-button>
+      <mat-radio-button value=3>Code </mat-radio-button>
+      <mat-radio-button value=4>Others</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <br>
+  <div style="text-align:center">
+
+    <br>
+    <div *ngIf="PromotionType==3">
+      <mat-form-field>
+        <mat-select placeholder="Coupon Code" [(ngModel)]="Code" >
+          <mat-option *ngFor="let code of Coupon" [value]="code.code">{{code.code}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div style="text-align:center">
+    <a mat-raised-button routerLink="/page1">Back</a>
+    <a mat-raised-button (click)="save()" color="primary">save</a>
+  </div>
+</mat-card>

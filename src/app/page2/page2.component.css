@@ -1,0 +1,10 @@
+.example-card {
+    max-width:600px;
+    margin : auto;
+    background-color: #ff8000;
+  }
+  .prototype-card {
+    max-width:400px;
+    margin : auto;
+    background-color: #ee9c4a;
+  }

@@ -31,10 +31,9 @@ class DiscountController{
         return discount.get();
     }
 
-    @GetMapping("/Timebyid/{Pid}")
-    public Period ShowTime(@PathVariable Long Pid) {
-        Optional<Period> period = periodRepository.findById(Pid);
-        return period.get();
+    @GetMapping("/Coupon")
+    public List<Coupon> showCoupon(){
+        return couponRepository.findAll().stream().collect(Collectors.toList());
     }
 
     @PostMapping("/discount(coupon)/create/{Name}/{Title}/{Tid}/{Sdate}/{Edate}/{Duration}/{code}")
