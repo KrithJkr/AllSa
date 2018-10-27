@@ -3,8 +3,8 @@
     <mat-card-title><h3>ลงทะเบียนร้านอาหาร</h3></mat-card-title>
     <mat-form-field>
       <mat-select placeholder="เจ้าของร้าน" [(ngModel)]="owa">
-        <mat-option *ngFor="let owe of owname" [value]="owe.ow_id"   >
-          {{owe.owname}}
+        <mat-option *ngFor="let owe of owname" [value]="owe.mid"   >
+          {{owe.username}}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -24,15 +24,7 @@
     <mat-form-field>
     <mat-select placeholder="ประเภทร้าน" [(ngModel)]="catego">
       <mat-option *ngFor="let cate of category" [value]="cate.cid"   >
-        {{cate.category}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <br>
-  <mat-form-field>
-    <mat-select placeholder="โปรโมชั่น" [(ngModel)]="promo">
-      <mat-option *ngFor="let promot of promos" [value]="promot.pid"   >
-        {{promot.proname}}
+        {{cate.categoryName}}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -43,8 +35,8 @@
   <br>
   <mat-form-field>
   <mat-select placeholder="เมนูแนะนำ" [(ngModel)]="menus" >
-    <mat-option *ngFor="let menui of menu" [value]="menui.mid"  >
-      {{menui.foodname}}
+    <mat-option *ngFor="let menui of menu" [value]="menui.menuId"  >
+      {{menui.menuName}}
     </mat-option>
   </mat-select>
 </mat-form-field>

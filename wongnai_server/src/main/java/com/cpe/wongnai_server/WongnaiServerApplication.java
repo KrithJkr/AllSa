@@ -45,7 +45,7 @@ public static void main(String[] args) {
                 coupon.setCode(code);
                 CouponRepository.save(coupon);
             });
-
+            
             CouponRepository.findAll().forEach(System.out::println);
 
             Stream.of("Clean Food", "Normal Food", "Fast Food", "Fine Dinning").forEach(catName -> {

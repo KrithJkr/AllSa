@@ -87,7 +87,6 @@ class MenuController {
     public List<Menu> menus() {
         return menuRepository.findAll().stream()
                 .collect(Collectors.toList());
-
     }
     @GetMapping("/Menu/{menuId}")
     public Menu ShowMenu(@PathVariable Long menuId) {

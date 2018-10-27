@@ -35,17 +35,25 @@ export class RegistresComponent implements OnInit {
     this.RegistresService.getAllRestaurant().subscribe(data => {
       this.restas = data;
       })
-      
+      this.RegistresService.getAllMenus().subscribe(data => {
+        this.menu = data;
+        })
+        this.RegistresService.getAllMember().subscribe(data => {
+          this.owname = data;
+          })
+          this.RegistresService.getAllCategories().subscribe(data => {
+            this.category = data;
+            })
+
   }
   save() {
     if (this.owa === undefined || this.rname === '' || this.packAddress.addressSelect === ''
         || this.catego === undefined
-        || this.menus === undefined || this.packAddress.addressSelect === undefined || this.rtel === undefined
-        || this.promo === undefined) {
+        || this.menus === undefined || this.packAddress.addressSelect === undefined || this.rtel === undefined ) {
     alert('กรุณากรอกข้อมูลให้ครบถ้วน');
     } else {
         this.httpClient.post('http://localhost:8080/restaurant/create/' + this.rname + '/'
-         + this.catego + '/' + this.menus + '/' + this.owa + '/' + this.rtel + '/' + this.promo, this.packAddress).subscribe(
+         + this.catego + '/' + this.menus + '/' + this.owa + '/' + this.rtel, this.packAddress).subscribe(
         data => {
             console.log('PUT Request is successful', data);
         },

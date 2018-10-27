@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.cpe.wongnai_server.Repository.*;
 import com.cpe.wongnai_server.Repository.RestaurantRepository;
+import com.cpe.wongnai_server.entity.ResCategory;
 import com.cpe.wongnai_server.entity.Restaurant;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -35,6 +36,10 @@ class RestaurantController {
     public Restaurant ShowRestaurantInfo(@PathVariable Long rid) {
         Optional<Restaurant> restaurant = restaurantRepository.findById(rid);
         return restaurant.get();
+    }
+    @GetMapping("/rescatagory")
+    public List<ResCategory> showResCatagory() {
+        return resCategoryRepository.findAll().stream().collect(Collectors.toList());
     }
     @PostMapping("/restaurant/create/{rname}/{catego}/{menus}/{owa}/{rtel}")
     public Restaurant createRestaurant(@PathVariable Long menus,

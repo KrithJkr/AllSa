@@ -137,12 +137,10 @@ component: Page3Component
     CreateprofileComponent,
     ViewprofileComponent,
     FacebookComponent,
-<<<<<<< HEAD
     ViewprofileComponent,
+    RegistresComponent,
+    GoogleComponent,
     RegistresComponent
-=======
-    GoogleComponent
->>>>>>> 4c27ddb21e74beccc7f8c0554363c2fcd6645d85
   ],
   imports: [
     BrowserModule,
