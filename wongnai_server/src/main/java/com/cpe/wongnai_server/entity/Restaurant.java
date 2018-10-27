@@ -18,8 +18,18 @@ public class Restaurant {
     private @NonNull String address;
     private @NonNull String restaurantName;
     private @NonNull String restaurantImg;
+    private @NonNull String rtel;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = ResCategory.class)
     @JoinColumn(name = "cid", insertable = true)
     private ResCategory categories;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "memowid", insertable = true)
+    private  Member memberowner;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "menuid", insertable = true)
+    private  Menu menus;
+
 }

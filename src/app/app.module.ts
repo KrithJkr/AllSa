@@ -1,3 +1,4 @@
+import { RegistresService } from './registres.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -35,6 +36,7 @@ import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import { RegisterService } from './register.service';
 import { CreateService } from './create.service';
 import { ViewprofileService } from './viewprofile.service';
+import { RegistresComponent } from './registres/registres.component';
 
 const appRoutes: Routes = [
   {
@@ -108,6 +110,10 @@ component: Page3Component
 {
   path: 'google',
   component: GoogleComponent
+},
+{
+  path: 'registres',
+  component: RegistresComponent
 }
 ];
 
@@ -129,7 +135,8 @@ component: Page3Component
     CreateprofileComponent,
     GoogleComponent,
     FacebookComponent,
-    ViewprofileComponent
+    ViewprofileComponent,
+    RegistresComponent
   ],
   imports: [
     BrowserModule,
@@ -151,12 +158,12 @@ component: Page3Component
     MatRadioModule,
     MatSnackBarModule,
     MatNativeDateModule
-    
+
 
 
 
   ],
-  providers: [MenuService,RestaService,PageService,RegisterService, CreateService, ViewprofileService],
+  providers: [MenuService,RestaService,PageService,RegisterService, CreateService, ViewprofileService,RegistresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

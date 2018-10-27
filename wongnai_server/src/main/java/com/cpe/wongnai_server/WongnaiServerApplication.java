@@ -45,7 +45,7 @@ public static void main(String[] args) {
                 coupon.setCode(code);
                 CouponRepository.save(coupon);
             });
-            
+
             CouponRepository.findAll().forEach(System.out::println);
 
             Stream.of("Clean Food", "Normal Food", "Fast Food", "Fine Dinning").forEach(catName -> {
@@ -60,7 +60,7 @@ public static void main(String[] args) {
               meatRepository.save(meat);
           });
             meatRepository.findAll().forEach(System.out::println);
-            
+
             Stream.of("Pae","Nay","Pee","Best","Copter","Jump").forEach(username -> {
               Member member = new Member();
               member.setUsername(username);
@@ -96,8 +96,8 @@ public static void main(String[] args) {
                 member.setMemberOf("FACEBOOK");
             }
             memberRepository.save(member);
-              
-              
+
+
           });
          memberRepository.findAll().forEach(System.out::println);
 
@@ -125,11 +125,17 @@ public static void main(String[] args) {
             RestaurantRepository.save(restaurant);
             if (restaurantName == "KorKok") {
                 restaurant.setAddress("SUT GATE 1");
+                restaurant.setRtel("055296214");
+                restaurant.setMenus(menuRepository.getOne(1L));
+                restaurant.setMemberowner(memberRepository.getOne(1L));
                 restaurant.setRestaurantImg("https://s3-ap-southeast-1.amazonaws.com/wekorat/wp-content/uploads/2014/11/19160638/IMG_4445-600x450.jpg");
                 restaurant.setCategories(ResCategoryRepository.getOne(2L));
                 RestaurantRepository.save(restaurant);
             } else if (restaurantName == "KaoGang") {
                 restaurant.setAddress("SUT GATE 4");
+                restaurant.setRtel("055296214");
+                restaurant.setMenus(menuRepository.getOne(1L));
+                restaurant.setMemberowner(memberRepository.getOne(2L));
                 restaurant.setRestaurantImg("https://s3-ap-southeast-1.amazonaws.com/wekorat/wp-content/uploads/2014/11/19160638/IMG_4445-600x450.jpg");
                 restaurant.setCategories(ResCategoryRepository.getOne(1L));
                 RestaurantRepository.save(restaurant);
@@ -181,19 +187,19 @@ public static void main(String[] args) {
                 discount.setDiscountCategory(DisCategoryRepository.getOne(4L));
                 discount.setDiscountRestaurant(RestaurantRepository.getOne(1L));
                 DiscountRepository.save(discount);
-            } 
+            }
             if (Name == "50% off!") {
                 discount.setTitle("you can buy product in half price");
                 discount.setDiscountCategory(DisCategoryRepository.getOne(1L));
                 discount.setDiscountRestaurant(RestaurantRepository.getOne(2L));
                 DiscountRepository.save(discount);
-            } 
+            }
             if (Name == "5% off with Holiday Coupon!") {
                 discount.setTitle("just show coupon code to earn 5% discount");
                 discount.setDiscountCategory(DisCategoryRepository.getOne(3L));
                 discount.setDiscountRestaurant(RestaurantRepository.getOne(2L));
                 DiscountRepository.save(discount);
-            } 
+            }
             DiscountRepository.findAll().forEach(System.out::println);
         });
 
@@ -203,7 +209,7 @@ public static void main(String[] args) {
             creditcardRepository.save(creditcard);
         });
         creditcardRepository.findAll().forEach(System.out::println);
-            
+
         Stream.of("Nakhonratchasima","Phitsanulok","Chiang Rai","Chiang Mai","Kalasin","Khon Kaen","Chaiyaphum","Nakhon Phanom","Bueng Kan","Buri Ram","Maha Sarakham","Mukdahan",
 			"Nan","Phayao","Phrae","Mae Hong Son","Lampang","Lamphun","Uttaradit","Yasothon","Roi Et","Loei","Si Sa Ket","Sakon Nakhon","Surin","Nong Khai","Nong Bua Lam Phu","Amnat Charoen"
 			,"Udon Thani","Ubon Ratchathani","Kamphaeng Phet","Chai Nat","Nakhon Nayok","Nakhon Pathom","Nakhon Sawan","Nonthaburi","Pathum Thani","Phra Nakhon Si Ayutthaya","Phichit"
@@ -215,7 +221,7 @@ public static void main(String[] args) {
 				addressRepository.save(address);
 			});
             addressRepository.findAll().forEach(System.out::println);
-            
+
             Stream.of("Pae","Nay","Pee","Best","Copter","Jump").forEach(username ->{
 				Profile profile = new Profile();
 				if(username=="Pae"){
@@ -232,7 +238,7 @@ public static void main(String[] args) {
 				}
 				else if(username=="Nay"){
 					profile.setFirstname("Anan");
-					profile.setLastname("Noisai");
+					profile.setLastname("Noisia");
 					profile.setAge(21l);
 					Creditcard creditcard = new Creditcard();
 					creditcard.setNumber(987654321l);

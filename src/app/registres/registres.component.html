@@ -1,0 +1,53 @@
+<mat-card class="example-card">
+  <div align="center">
+    <mat-card-title><h3>ลงทะเบียนร้านอาหาร</h3></mat-card-title>
+    <mat-form-field>
+      <mat-select placeholder="เจ้าของร้าน" [(ngModel)]="owa">
+        <mat-option *ngFor="let owe of owname" [value]="owe.ow_id"   >
+          {{owe.owname}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="ชื่อร้านอาหาร" [(ngModel)]="rname" >
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="เบอร์โทรศัพท์ร้านอาหาร" [(ngModel)]="rtel" >
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="ที่อยู่ร้านอาหาร" [(ngModel)]="packAddress.addressSelect"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+    <mat-select placeholder="ประเภทร้าน" [(ngModel)]="catego">
+      <mat-option *ngFor="let cate of category" [value]="cate.cid"   >
+        {{cate.category}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-select placeholder="โปรโมชั่น" [(ngModel)]="promo">
+      <mat-option *ngFor="let promot of promos" [value]="promot.pid"   >
+        {{promot.proname}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="input your picture" [(ngModel)]="packAddress.picurl" ></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+  <mat-select placeholder="เมนูแนะนำ" [(ngModel)]="menus" >
+    <mat-option *ngFor="let menui of menu" [value]="menui.mid"  >
+      {{menui.foodname}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+      <div align="right">
+      <button mat-flat-button (click)="save()" color="primary">Save</button>
+    </div>
