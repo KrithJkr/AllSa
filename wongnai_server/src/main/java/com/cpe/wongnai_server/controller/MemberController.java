@@ -13,15 +13,24 @@ import java.util.stream.Collectors;
 class MemberController {
 
     @Autowired
-    private MemberRepository repository;
-    @GetMapping("/Member")
+    private MemberRepository memberrepository;
+    @GetMapping("/members")
     public List<Member> members() {
-        return repository.findAll().stream() .collect(Collectors.toList());
+        return memberrepository.findAll().stream() .collect(Collectors.toList());
     }
 
   @GetMapping("/member/{mid}")
   public Member getMemberById(@PathVariable Long mid) {
-    Optional<Member> member = repository.findById(mid);
+    Optional<Member> member = memberrepository.findById(mid);
     return member.get();
   }
+  @PostMapping("/member/create/{username}/{password}/{email}/{memberOf}")
+    public Member createMember(@PathVariable String username,@PathVariable String password,@PathVariable String email,@PathVariable String memberOf){
+        Member member = new Member();
+        member.setUsername(username);
+        member.setPassword(password);
+        member.setEmail(email);
+        member.setMemberOf(memberOf);
+        return memberrepository.save(member);
+    }
 }
