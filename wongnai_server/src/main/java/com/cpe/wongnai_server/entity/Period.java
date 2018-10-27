@@ -1,5 +1,8 @@
 package com.cpe.wongnai_server.entity;
 import lombok.*;
+
+import java.util.Date;
+
 import javax.persistence.*;
 
 @Data
@@ -13,7 +16,10 @@ public class Period {
     @SequenceGenerator(name = "period_seq", sequenceName = "period_seq")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "period_seq")
     private @NonNull Long Pid;
-    private @NonNull String Sdate;
-    private @NonNull String Edate;
+    private @NonNull Date sdate;
+    private @NonNull Date edate;
     private @NonNull String Duration;
+
+
+
 }

@@ -6,5 +6,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public
 interface CouponRepository extends JpaRepository<Coupon,Long>{
-  Coupon findByCodeName(String codeName);
+  Coupon findByCode(String code);
 }

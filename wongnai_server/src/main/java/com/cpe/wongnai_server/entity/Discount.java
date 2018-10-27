@@ -1,5 +1,8 @@
 package com.cpe.wongnai_server.entity;
 import lombok.*;
+
+
+
 import javax.persistence.*;
 
 @Data
@@ -17,11 +20,22 @@ public class Discount {
     private @NonNull String Title;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Restaurant.class)
-    @JoinColumn(name = "rid", insertable = true)
-    private  Restaurant Restaurants;
+    @JoinColumn(name = "DR_ID", insertable = true)
+    private  Restaurant DiscountRestaurant;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = DisCategory.class)
-    @JoinColumn(name = "tid", insertable = true)
+    @JoinColumn(name = "DCG_ID", insertable = true)
     private  DisCategory DiscountCategory;
+
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Coupon.class)
+    @JoinColumn(name = "DC_ID", insertable = true)
+    private  Coupon DiscountCoupon;
+
+    @OneToOne(fetch = FetchType.EAGER, targetEntity = Period.class)
+    @JoinColumn(name = "DP_ID", insertable = true)
+    private  Period DiscountPeriod;
+   
+    
+
 
 }

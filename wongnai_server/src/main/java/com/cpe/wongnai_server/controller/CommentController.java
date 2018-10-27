@@ -51,7 +51,7 @@ class CommentController {
         Comment comment = new Comment();
 
         comment.setRestaurants(restaurantRepository.getOne(rid));
-        comment.setMembers(memberRepository.findByUsername(username));
+        comment.setMembers(memberRepository.findByMemberName(username));
         comment.setText(jsonText.textValue());
         comment.setRating(ratingRepository.getOne(ratinglevel));
         comment.setImg(jsonImg.textValue());
