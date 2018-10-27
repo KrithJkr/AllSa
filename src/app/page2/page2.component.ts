@@ -21,41 +21,44 @@ export class Page2Component implements OnInit {
   Enddate: null;
   Code:String;
   Coupon: Array<any>;
+  restas:Array<any>;
+  restautant: String;
 
   constructor(private data: PageService,private httpClient: HttpClient) { }
 
   ngOnInit() {
     this.data.getCoupon().subscribe(data => {this.Coupon = data;})
+    this.data.getAllRestaurant().subscribe(data => {this.restas = data;})
   }
 
   save(){
     if(this.PromotionName === undefined || this.PromotionTitle === undefined || this.PromotionType === undefined ||
-      this.Startdate === undefined || this.Enddate === undefined || this.PromotionDuration === undefined) {
+      this.Startdate === undefined || this.Enddate === undefined || this.PromotionDuration === undefined|| this.restautant === undefined) {
     alert('กรุณากรอกข้อมูลให้ครบถ้วน');
     }
     else{
       if(this.Code !== undefined){
         this.httpClient.post('http://localhost:8080/discount(coupon)/create/' + this.PromotionName + '/' + this.PromotionTitle+ '/' + this.PromotionType+ '/'
-         + this.Startdate + '/' + this.Enddate+ '/' + this.PromotionDuration+ '/'+ this.Code,null).subscribe(
+         + this.Startdate + '/' + this.Enddate+ '/' + this.PromotionDuration+ '/'+ this.restautant +'/'+ this.Code,null).subscribe(
         data => {
                 console.log('PUT Code and discount is successful', data);
             },
             error => {
                 console.log('------------Error----------', error);
-                window.location.reload();
+                //window.location.reload();
             }
 
       );
       }
       else{
         this.httpClient.post('http://localhost:8080/discount/create/' + this.PromotionName + '/' + this.PromotionTitle+ '/' + this.PromotionType+ '/'
-         + this.Startdate + '/' + this.Enddate+ '/' + this.PromotionDuration,null).subscribe(
+         + this.Startdate + '/' + this.Enddate+ '/' + this.PromotionDuration+ '/'+ this.restautant,null).subscribe(
         data => {
             console.log('PUT Request is successful', data);
         },
         error => {
             console.log('**********Error***********', error);
-            window.location.reload();
+            //window.location.reload();
         }
 
   );}

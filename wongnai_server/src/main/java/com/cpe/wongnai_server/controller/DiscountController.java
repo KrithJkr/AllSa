@@ -12,6 +12,8 @@ import java.util.stream.Collectors;
 @RestController
 class DiscountController{
     @Autowired
+    private RestaurantRepository restaurantRepository;
+    @Autowired
     private DiscountRepository discountRepository;
     @Autowired
     private PeriodRepository periodRepository;
@@ -36,10 +38,10 @@ class DiscountController{
         return couponRepository.findAll().stream().collect(Collectors.toList());
     }
 
-    @PostMapping("/discount(coupon)/create/{Name}/{Title}/{Tid}/{Sdate}/{Edate}/{Duration}/{code}")
+    @PostMapping("/discount(coupon)/create/{Name}/{Title}/{Tid}/{Sdate}/{Edate}/{Duration}/{restaurant}/{code}")
     public Discount createDiscount(@PathVariable String Name,@PathVariable String Title,@PathVariable long Tid,
-                                    @PathVariable Date Sdate,@PathVariable Date Edate,@PathVariable String Duration
-                                    ,@PathVariable String code){
+                                    @PathVariable Date Sdate,@PathVariable Date Edate,@PathVariable String Duration,
+                                    @PathVariable String restaurant,@PathVariable String code){
 
        
         Period period = new Period();
@@ -54,13 +56,15 @@ class DiscountController{
         discount.setDiscountCategory(discategoryRepository.getOne(Tid));
         discount.setDiscountCoupon(couponRepository.findByCode(code));
         discount.setDiscountPeriod(periodRepository.findBySdate(Sdate));
+        discount.setDiscountRestaurant(restaurantRepository.findByRestaurantName(restaurant));
         return discountRepository.save(discount);
         
 
     }
-    @PostMapping("/discount/create/{Name}/{Title}/{Tid}/{Sdate}/{Edate}/{Duration}")
+    @PostMapping("/discount/create/{Name}/{Title}/{Tid}/{Sdate}/{Edate}/{Duration}/{restaurant}")
     public Discount createDiscount(@PathVariable String Name,@PathVariable String Title,@PathVariable long Tid,
-                                    @PathVariable Date Sdate,@PathVariable Date Edate,@PathVariable String Duration){
+                                    @PathVariable Date Sdate,@PathVariable Date Edate,@PathVariable String Duration,
+                                    @PathVariable String restaurant){
 
        
         Period period = new Period();
@@ -74,6 +78,7 @@ class DiscountController{
         discount.setTitle(Title);
         discount.setDiscountCategory(discategoryRepository.getOne(Tid));
         discount.setDiscountPeriod(periodRepository.findBySdate(Sdate));
+        discount.setDiscountRestaurant(restaurantRepository.findByRestaurantName(restaurant));
         return discountRepository.save(discount);
 
     }

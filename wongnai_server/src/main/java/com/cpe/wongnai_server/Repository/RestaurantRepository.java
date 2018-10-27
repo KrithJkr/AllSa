@@ -8,4 +8,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public
 interface RestaurantRepository extends JpaRepository<Restaurant,Long> {
+    Restaurant findByRestaurantName(String restaurantName);
 }

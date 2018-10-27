@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule, MatIconModule ,MatNativeDateModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -78,7 +78,7 @@ component: Page2Component
 }
 ,
 {
-path: 'page3',
+path: 'page3/:id',
 component: Page3Component
 }
 ];
@@ -111,12 +111,13 @@ component: Page3Component
     MatFormFieldModule,
     RouterModule.forRoot(appRoutes),
     MatSelectModule,
-   MatStepperModule,
+    MatStepperModule,
     MatIconModule,
     MatTooltipModule,
     MatDatepickerModule,
     MatRadioModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatNativeDateModule
     
 
 
