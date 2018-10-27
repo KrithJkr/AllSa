@@ -22,7 +22,7 @@ constructor(private http: HttpClient) {
   }
 
      getMembers(): Observable<any>{
-    return this.http.get('//localhost:8080/Member');
+    return this.http.get('//localhost:8080/members');
   }
 
   getRatingByRid(rid){

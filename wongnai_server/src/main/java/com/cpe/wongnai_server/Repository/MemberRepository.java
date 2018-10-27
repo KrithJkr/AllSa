@@ -9,6 +9,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public
 interface MemberRepository extends JpaRepository<Member, Long> {
     Member findByUsername(String username);
+    Member findByEmail(String email);
+    Member findByPassword(String password);
+    Member findByMemberOf(String memberOf);
     
 }
 

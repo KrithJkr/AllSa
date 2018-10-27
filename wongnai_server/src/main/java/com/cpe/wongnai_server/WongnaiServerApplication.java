@@ -16,7 +16,8 @@ public static void main(String[] args) {
     ApplicationRunner init(CategoriesRepository categoriesRepository,MeatRepository meatRepository,CookingRepository cookingRepository,
     MemberRepository memberRepository,MenuRepository menuRepository,CommentRepository CommentRepository,
     RestaurantRepository RestaurantRepository,RatingRepository RatingRepository,ResCategoryRepository ResCategoryRepository,
-    DiscountRepository DiscountRepository,DisCategoryRepository DisCategoryRepository,CouponRepository CouponRepository) {
+    DiscountRepository DiscountRepository,DisCategoryRepository DisCategoryRepository,CouponRepository CouponRepository,AddressRepository addressRepository,
+    CreditcardRepository creditcardRepository, ProfileRepository profileRepository) {
         return args ->{
 
             Stream.of( "percent","amount","code" ,"other").forEach(Type -> {
@@ -59,28 +60,47 @@ public static void main(String[] args) {
               meatRepository.save(meat);
           });
             meatRepository.findAll().forEach(System.out::println);
-            Stream.of("Pheekay", "Threerapat", "Anan", "Thotsaphon").forEach(memberName -> {
+            
+            Stream.of("Pae","Nay","Pee","Best","Copter","Jump").forEach(username -> {
               Member member = new Member();
-              member.setUsername(memberName);
+              member.setUsername(username);
               memberRepository.save(member);
-              if(memberName == "Pheekay"){
-                member.setPassword("1111");
-                memberRepository.save(member);
-              }
-              if(memberName == "Threerapat"){
-                member.setPassword("2222");
-                memberRepository.save(member);
-              }
-              if(memberName == "Anan"){
-                member.setPassword("3333");
-                memberRepository.save(member);
-              }
-              if(memberName == "Thotsaphon"){
-                member.setPassword("4444");
-                memberRepository.save(member);
-              }
+            if (username == "Pae") {
+                member.setPassword("111");
+                member.setEmail("pae_tawee@hotmail.co.th");
+                member.setMemberOf("FACEBOOK");
+            }
+            else if (username == "Nay") {
+                member.setPassword("222");
+                member.setEmail("Nay@hotmail.com");
+                member.setMemberOf("FACEBOOK");
+            }
+            else if (username == "Copter") {
+                member.setPassword("333");
+                member.setEmail("Ter@gmail.com");
+                member.setMemberOf("GOOGLE");
+            }
+            else if (username == "Pee") {
+                member.setPassword("444");
+                member.setEmail("Pee@hotmail.com");
+                member.setMemberOf("GOOGLE");
+            }
+            else if (username == "Jump") {
+                member.setPassword("555");
+                member.setEmail("JJp@gmail.co.th");
+                member.setMemberOf("GOOGLE");
+            }
+            else if (username == "Best") {
+                member.setPassword("666");
+                member.setEmail("Best@hotmail.com");
+                member.setMemberOf("FACEBOOK");
+            }
+            memberRepository.save(member);
+              
+              
           });
          memberRepository.findAll().forEach(System.out::println);
+
          Stream.of("พักปลาสดไว้ในอุณหภูมิห้องราว 1 ชั่วโมง ให้น้ำในตัวปลาระเหยออกแล้วโรยเกลือลงบนตัวปลาทั้ง 2 ด้านอุ่นกระทะสแตนเลสให้บนเตาให้ร้อนจัด ใส่น้ำมัน 1 ช้อนโต๊ะ และเกลือ 1 หยิบมือลงไปคั่วจนน้ำมันร้อนเป็นไอ ค่อยเทน้ำมันออกและเช็ดผิวกระทะด้วยผ้าสะอาด กระทะจะลื่นไม่ติดหนังปลาเทน้ำมันลงกระทะอีกครั้ง รอจนน้ำมันเดือด ค่อยใส่ปลาลงไปทอดด้วยไฟปานกลาง หากต้องการให้ปลากรอบมาก ต้องใส่น้ำมันเยอะท่วมตัวปลาอย่าพลิกปลาบ่อยๆ  รอให้สุกทีละด้านค่อยพลิก ปลาทอดจะสวยงามไม่ขาดแยกชิ้นพักปลาบนกระดาษซับน้ำมันสักครู่ก่อนเสิร์ฟร้อนๆ พร้อมซอสและเครื่องเคียงตามใจชอบ"
          ).forEach(cookingName -> {
          Cooking cooking = new Cooking();
@@ -176,8 +196,103 @@ public static void main(String[] args) {
             } 
             DiscountRepository.findAll().forEach(System.out::println);
         });
-        
+
+        Stream.of("BBL","BBC","KTB","BAY","KBANK","CITI","TMB","SCB","NBANK","SCIB","GSB","GHB").forEach(bank ->{
+            Creditcard creditcard = new Creditcard();
+                creditcard.setBank(bank);
+            creditcardRepository.save(creditcard);
+        });
+        creditcardRepository.findAll().forEach(System.out::println);
             
+        Stream.of("Nakhonratchasima","Phitsanulok","Chiang Rai","Chiang Mai","Kalasin","Khon Kaen","Chaiyaphum","Nakhon Phanom","Bueng Kan","Buri Ram","Maha Sarakham","Mukdahan",
+			"Nan","Phayao","Phrae","Mae Hong Son","Lampang","Lamphun","Uttaradit","Yasothon","Roi Et","Loei","Si Sa Ket","Sakon Nakhon","Surin","Nong Khai","Nong Bua Lam Phu","Amnat Charoen"
+			,"Udon Thani","Ubon Ratchathani","Kamphaeng Phet","Chai Nat","Nakhon Nayok","Nakhon Pathom","Nakhon Sawan","Nonthaburi","Pathum Thani","Phra Nakhon Si Ayutthaya","Phichit"
+			,"Phetchabun","Lop Buri","Samut Prakan","Samut Songkhram","Samut Sakhon","Sing Buri","Sukhothai","Suphan Buri","Saraburi","Ang Thong","Uthai Thani","Chanthaburi","Chachoengsao"
+			,"Chon Buri","Trat","Prachin Buri","Rayong","Sa Kaeo","Kanchanaburi","Tak","Prachuap Khiri Khan","Phetchaburi","Ratchaburi","Krabi","Chumphon","Trang","Nakhon Si Thammarat"
+			,"Narathiwat","Pattani","Phangnga","Phatthalung","Phuket","Yala","Ranong","Songkhla","Satun","Surat Thani","Krung Thep Maha Nakhon(Bangkok Metropolis)").forEach(provine_name ->{
+				Address address = new Address();
+				address.setProvincename(provine_name);
+				addressRepository.save(address);
+			});
+            addressRepository.findAll().forEach(System.out::println);
+            
+            Stream.of("Pae","Nay","Pee","Best","Copter","Jump").forEach(username ->{
+				Profile profile = new Profile();
+				if(username=="Pae"){
+					profile.setFirstname("Thaweechai");
+					profile.setLastname("Kanklang");
+					profile.setAge(21l);
+					Creditcard creditcard = new Creditcard();
+					creditcard.setNumber(123456789l);
+					creditcard.setBank("SCB");
+					creditcardRepository.save(creditcard);
+					profile.setCreditcard(creditcardRepository.getOne(13L));
+					profile.setMember(memberRepository.getOne(1L));
+					profile.setAddress(addressRepository.getOne(1L));
+				}
+				else if(username=="Nay"){
+					profile.setFirstname("Anan");
+					profile.setLastname("Noisai");
+					profile.setAge(21l);
+					Creditcard creditcard = new Creditcard();
+					creditcard.setNumber(987654321l);
+					creditcard.setBank("SCB");
+					creditcardRepository.save(creditcard);
+					profile.setCreditcard(creditcardRepository.getOne(14L));
+					profile.setMember(memberRepository.getOne(2L));
+					profile.setAddress(addressRepository.getOne(2L));
+				}
+				else if(username=="Pee"){
+					profile.setFirstname("Krith");
+					profile.setLastname("Jeenkumroeng");
+					profile.setAge(21l);
+					Creditcard creditcard = new Creditcard();
+					creditcard.setNumber(155555555l);
+					creditcard.setBank("TMB");
+					creditcardRepository.save(creditcard);
+					profile.setCreditcard(creditcardRepository.getOne(15L));
+					profile.setMember(memberRepository.getOne(3L));
+					profile.setAddress(addressRepository.getOne(77L));
+				}
+				else if(username=="Best"){
+					profile.setFirstname("Supanat");
+					profile.setLastname("Jarukulgowit");
+					profile.setAge(21l);
+					Creditcard creditcard = new Creditcard();
+					creditcard.setNumber(123123123l);
+					creditcard.setBank("TMB");
+					creditcardRepository.save(creditcard);
+					profile.setCreditcard(creditcardRepository.getOne(16L));
+					profile.setMember(memberRepository.getOne(4L));
+					profile.setAddress(addressRepository.getOne(1L));
+				}
+				else if(username=="Copter"){
+					profile.setFirstname("Thotsaphon");
+					profile.setLastname("JanTree");
+					profile.setAge(21l);
+					Creditcard creditcard = new Creditcard();
+					creditcard.setNumber(159159159l);
+					creditcard.setBank("TMB");
+					creditcardRepository.save(creditcard);
+					profile.setCreditcard(creditcardRepository.getOne(17L));
+					profile.setMember(memberRepository.getOne(5L));
+					profile.setAddress(addressRepository.getOne(23L));
+				}
+				else if(username=="Jump"){
+					profile.setFirstname("Theeraphat");
+					profile.setLastname("Jamklang");
+					profile.setAge(21l);
+					Creditcard creditcard = new Creditcard();
+					creditcard.setNumber(147852963l);
+					creditcard.setBank("TMB");
+					creditcardRepository.save(creditcard);
+					profile.setCreditcard(creditcardRepository.getOne(18L));
+					profile.setMember(memberRepository.getOne(6L));
+					profile.setAddress(addressRepository.getOne(1L));
+				}
+				profileRepository.save(profile);
+			});
+			profileRepository.findAll().forEach(System.out::println);
     };  }
 }
 

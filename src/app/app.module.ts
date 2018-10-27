@@ -27,7 +27,18 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+<<<<<<< HEAD
 import { ToolbarComponent } from './toolbar/toolbar.component';
+=======
+import { RegisterComponent } from './register/register.component';
+import { CreateprofileComponent } from './createprofile/createprofile.component';
+import { GoogleComponent } from './google/google.component';
+import { FacebookComponent } from './facebook/facebook.component';
+import { ViewprofileComponent } from './viewprofile/viewprofile.component';
+import { RegisterService } from './register.service';
+import { CreateService } from './create.service';
+import { ViewprofileService } from './viewprofile.service';
+>>>>>>> 54c30746ee787652c9bba3e6365bb67c33f2965c
 
 const appRoutes: Routes = [
   {
@@ -81,6 +92,26 @@ component: Page2Component
 {
 path: 'page3/:id',
 component: Page3Component
+},
+{
+  path: 'register',
+  component: RegisterComponent
+},
+{
+  path: 'createprofile',
+  component: CreateprofileComponent
+},
+{
+  path: 'viewprofile',
+  component: ViewprofileComponent
+},
+{
+  path: 'facebook',
+  component: FacebookComponent
+},
+{
+  path: 'google',
+  component: GoogleComponent
 }
 ];
 
@@ -98,7 +129,15 @@ component: Page3Component
     Page3Component,
     LoginComponent,
     HomeComponent,
+<<<<<<< HEAD
     ToolbarComponent
+=======
+    RegisterComponent,
+    CreateprofileComponent,
+    GoogleComponent,
+    FacebookComponent,
+    ViewprofileComponent
+>>>>>>> 54c30746ee787652c9bba3e6365bb67c33f2965c
   ],
   imports: [
     BrowserModule,
@@ -125,7 +164,7 @@ component: Page3Component
 
 
   ],
-  providers: [MenuService,RestaService,PageService],
+  providers: [MenuService,RestaService,PageService,RegisterService, CreateService, ViewprofileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

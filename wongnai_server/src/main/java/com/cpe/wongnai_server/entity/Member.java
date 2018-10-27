@@ -11,9 +11,20 @@ import javax.persistence.*;
 public class Member{
   @Id
 	@SequenceGenerator(name="member_seq",sequenceName="member_seq")
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="member_seq")
+  @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="member_seq")
 	@Column(name="memberId",unique = true, nullable = true)
 	private @NonNull Long mid;
 	private @NonNull String username;
-  private @NonNull String password;
+	private @NonNull String password;
+	private @NonNull String email;
+  private @NonNull String memberOf;
+    
+
+   /* public Member(Long id,String password,String username,String email,String memberOf) {
+        this.mid = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.memberOf = memberOf;
+    }*/
 }

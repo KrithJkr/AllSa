@@ -2,6 +2,7 @@ import { MenuService } from './../menu.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RestaService } from '../resta.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class AddMenuComponent implements OnInit {
   categories: Array<any>;
   meat: Array<any>;
   memberLogin:any;
-  constructor(private menuService: MenuService,private httpClient: HttpClient,private restaService:RestaService) {
+  constructor(private menuService: MenuService,private httpClient: HttpClient,private restaService:RestaService,private router: Router) {
 
    }
 
@@ -43,10 +44,13 @@ export class AddMenuComponent implements OnInit {
     this.httpClient.post('http://localhost:8080/menu/create/',this.MenuInput).subscribe(
       data => {
           console.log('PUT Request is successful', data);
+          this.router.navigate(['menu']);
+          
       },
       error => {
           console.log('Error', error);
           /* window.location.reload(); */
+          this.router.navigate(['menu']);
       }
       );
   }
