@@ -38,4 +38,7 @@ constructor(private http: HttpClient) {
   getMemberById(id){
     return this.http.get('//localhost:8080/member/'+id);
   }
+  setMemberForProfile(id){
+    localStorage.setItem('key',id);
+  }
 }

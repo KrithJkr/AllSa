@@ -126,7 +126,12 @@ component: Page3Component
     Page3Component,
     LoginComponent,
     HomeComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    RegisterComponent,
+    CreateprofileComponent,
+    ViewprofileComponent,
+    FacebookComponent,
+    GoogleComponent
   ],
   imports: [
     BrowserModule,
