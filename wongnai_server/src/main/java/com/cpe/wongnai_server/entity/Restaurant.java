@@ -16,8 +16,7 @@ public class Restaurant {
     private @NonNull
     Long rid;
     private @NonNull String address;
-    private @NonNull
-    String restaurantName;
+    private @NonNull String restaurantName;
     private @NonNull String restaurantImg;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = ResCategory.class)

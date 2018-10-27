@@ -61,8 +61,24 @@ public static void main(String[] args) {
             meatRepository.findAll().forEach(System.out::println);
             Stream.of("Pheekay", "Threerapat", "Anan", "Thotsaphon").forEach(memberName -> {
               Member member = new Member();
-              member.setMemberName(memberName);
+              member.setUsername(memberName);
               memberRepository.save(member);
+              if(memberName == "Pheekay"){
+                member.setPassword("1111");
+                memberRepository.save(member);
+              }
+              if(memberName == "Threerapat"){
+                member.setPassword("2222");
+                memberRepository.save(member);
+              }
+              if(memberName == "Anan"){
+                member.setPassword("3333");
+                memberRepository.save(member);
+              }
+              if(memberName == "Thotsaphon"){
+                member.setPassword("4444");
+                memberRepository.save(member);
+              }
           });
          memberRepository.findAll().forEach(System.out::println);
          Stream.of("พักปลาสดไว้ในอุณหภูมิห้องราว 1 ชั่วโมง ให้น้ำในตัวปลาระเหยออกแล้วโรยเกลือลงบนตัวปลาทั้ง 2 ด้านอุ่นกระทะสแตนเลสให้บนเตาให้ร้อนจัด ใส่น้ำมัน 1 ช้อนโต๊ะ และเกลือ 1 หยิบมือลงไปคั่วจนน้ำมันร้อนเป็นไอ ค่อยเทน้ำมันออกและเช็ดผิวกระทะด้วยผ้าสะอาด กระทะจะลื่นไม่ติดหนังปลาเทน้ำมันลงกระทะอีกครั้ง รอจนน้ำมันเดือด ค่อยใส่ปลาลงไปทอดด้วยไฟปานกลาง หากต้องการให้ปลากรอบมาก ต้องใส่น้ำมันเยอะท่วมตัวปลาอย่าพลิกปลาบ่อยๆ  รอให้สุกทีละด้านค่อยพลิก ปลาทอดจะสวยงามไม่ขาดแยกชิ้นพักปลาบนกระดาษซับน้ำมันสักครู่ก่อนเสิร์ฟร้อนๆ พร้อมซอสและเครื่องเคียงตามใจชอบ"
@@ -103,10 +119,37 @@ public static void main(String[] args) {
 
         Comment comment = new Comment();
             comment.setMembers(memberRepository.getOne(1L));
-            comment.setText("Somsri First Comment for KorKok :)");
-            comment.setRestaurants(RestaurantRepository.getOne(1L));
+            comment.setText(" Hello Comment for KorKok :)");
+          comment.setImg("https://thepaperglow.files.wordpress.com/2015/06/wpid-pizza-junk-food-600.jpg");            comment.setRestaurants(RestaurantRepository.getOne(1L));
             comment.setRating(RatingRepository.getOne(5L));
             CommentRepository.save(comment);
+
+
+          Comment comment2 = new Comment();
+          comment2.setMembers(memberRepository.getOne(2L));
+          comment2.setRating(RatingRepository.getOne(3L));
+          comment2.setImg("http://www.pubwages.com/wp-content/uploads/2011/06/junk-food-008.jpg");
+          comment2.setText("YoYo Comment for KorKok >,<");
+          comment2.setRestaurants(RestaurantRepository.getOne(1L));
+          CommentRepository.save(comment2);
+
+          Comment comment3 = new Comment();
+          comment3.setMembers(memberRepository.getOne(2L));
+          comment3.setRating(RatingRepository.getOne(5L));
+          comment3.setImg("https://foodimentaryguy.files.wordpress.com/2014/11/healthfitnessrevolution-com.jpg");
+          comment3.setText("Hi Comment for KaoGang :D");
+          comment3.setRestaurants(RestaurantRepository.getOne(2L));
+          CommentRepository.save(comment3);
+
+
+          Comment comment4 = new Comment();
+          comment4.setMembers(memberRepository.getOne(1L));
+          comment4.setRating(RatingRepository.getOne(2L));
+          comment4.setImg("http://www.pubwages.com/wp-content/uploads/2011/06/junk-food-008.jpg");
+          comment4.setText("Yeah Comment for KaoGang :<");
+          comment4.setRestaurants(RestaurantRepository.getOne(2L));
+          CommentRepository.save(comment4);
+
         CommentRepository.findAll().forEach(System.out::println);
 
         Stream.of("buy one get one","50% off!","5% off with Holiday Coupon!").forEach(Name -> {

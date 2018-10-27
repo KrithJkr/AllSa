@@ -22,10 +22,20 @@ constructor(private http: HttpClient) {
   }
 
      getMembers(): Observable<any>{
-    return this.http.get('//localhost:8080/members');
+    return this.http.get('//localhost:8080/Member');
   }
 
   getRatingByRid(rid){
     return this.http.get('//localhost:8080/restaurant/rating/'+rid);
+  }
+
+  setMemberLoginId(id){
+    localStorage.setItem('key',id);
+  }
+  getMemberLoginId(){
+    return localStorage.getItem('key');
+  }
+  getMemberById(id){
+    return this.http.get('//localhost:8080/member/'+id);
   }
 }

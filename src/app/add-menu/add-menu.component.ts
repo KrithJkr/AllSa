@@ -1,6 +1,7 @@
 import { MenuService } from './../menu.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RestaService } from '../resta.service';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class AddMenuComponent implements OnInit {
   member: Array<any>;
   categories: Array<any>;
   meat: Array<any>;
-  constructor(private menuService: MenuService,private httpClient: HttpClient) {
+  memberLogin:any;
+  constructor(private menuService: MenuService,private httpClient: HttpClient,private restaService:RestaService) {
 
    }
 
@@ -24,6 +26,9 @@ export class AddMenuComponent implements OnInit {
     (data => {this.categories = data})
     this.menuService.getAllMeat().subscribe
     (data => {this.meat = data})
+   
+    this.restaService.getMemberById(this.restaService.getMemberLoginId()).subscribe(
+      data => this.memberLogin = data)
   }
   MenuInput : any = {
     MenuNameSelect: '',

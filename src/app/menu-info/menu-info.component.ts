@@ -2,6 +2,7 @@ import { MenuService } from './../menu.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { RestaService } from '../resta.service';
 
 @Component({
   selector: 'app-menu-info',
@@ -13,16 +14,19 @@ export class MenuInfoComponent implements OnInit {
   Menus: Array<any>;
   // member: Array<any>;
 
+  MemberLogin:any;
+
    constructor(private menuService: MenuService,private route: ActivatedRoute,private httpClient: HttpClient) {
     this.route.params.subscribe( params => this.Menu = params.menuId)
    }
    ngOnInit() {
     this.menuService.getMenu(this.Menu).subscribe(
       data => this.Menu = data)
+
      this.menuService.getAllMenu().subscribe(data => {
      this.Menus = data;
-
     })
+
    }
 
 }

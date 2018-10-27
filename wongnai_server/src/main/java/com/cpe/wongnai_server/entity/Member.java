@@ -13,7 +13,7 @@ public class Member{
 	@SequenceGenerator(name="member_seq",sequenceName="member_seq")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="member_seq")
 	@Column(name="memberId",unique = true, nullable = true)
-	private @NonNull Long memberId;
-	private @NonNull String memberName;
-
+	private @NonNull Long mid;
+	private @NonNull String username;
+  private @NonNull String password;
 }

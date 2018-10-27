@@ -22,11 +22,16 @@ import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { Page3Component } from './page3/page3.component';
 import { PageService } from './page.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'menu',
+    redirectTo: 'login',
     pathMatch: 'full'
     },
     {
@@ -35,6 +40,11 @@ const appRoutes: Routes = [
     }
     ,
     {
+      path: 'home',
+      component: HomeComponent
+      }
+      ,
+    {
     path: 'add-menu',
     component: AddMenuComponent
     },
@@ -42,6 +52,11 @@ const appRoutes: Routes = [
       path: 'menu/menu-info/:menuId',
       component: MenuInfoComponent
       },
+      {
+        path: 'login',
+        component: LoginComponent
+        }
+        ,
 {
 path: 'resta',
 component: RestaComponent
@@ -79,7 +94,9 @@ component: Page3Component
     StarRatingComponent,
     Page1Component,
     Page2Component,
-    Page3Component
+    Page3Component,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +113,11 @@ component: Page3Component
     MatSelectModule,
    MatStepperModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDatepickerModule,
+    MatRadioModule,
+    MatSnackBarModule
+    
 
 
 

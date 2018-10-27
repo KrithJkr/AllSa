@@ -24,6 +24,7 @@ export class RestainfoComponent implements OnInit {
   restaurantnumber: any;
 
   
+  memberLogin:any;
  
 
   constructor(private data: RestaService,private route: ActivatedRoute,private httpClient: HttpClient) {
@@ -44,6 +45,9 @@ export class RestainfoComponent implements OnInit {
     
     this.data.getRatingByRid(this.restaurantnumber).subscribe(
       data => { this.restaurantRating = data})
+
+    this.data.getMemberById(this.data.getMemberLoginId()).subscribe(
+        data => { this.memberLogin = data})
     }
 
 
@@ -53,7 +57,7 @@ export class RestainfoComponent implements OnInit {
   @Input('starCount') starCount: number;
   @Input('color') color: string;
   
-  usernameSelect:''
+
 
   mycomment : any = {
     textSelect: '',
@@ -64,10 +68,10 @@ export class RestainfoComponent implements OnInit {
 
 
   save(){
-    if(this.mycomment.textSelect === '' || this.rating === undefined || this.mycomment.imgSelect === '' || this.usernameSelect === '')
+    if(this.mycomment.textSelect === '' || this.rating === undefined || this.mycomment.imgSelect === '' || this.memberLogin.username === '')
     alert('กรุณากรอกข้อมูลให้ครบถ้วน');
     else{
-    this.httpClient.post('http://localhost:8080/comment/create/'+this.restaurantnumber+ '/'+this.usernameSelect+'/',this.mycomment).subscribe(
+    this.httpClient.post('http://localhost:8080/comment/create/'+this.restaurantnumber+ '/'+this.memberLogin.username+'/',this.mycomment).subscribe(
       data => {
           console.log('PUT Request is successful', data);
       },

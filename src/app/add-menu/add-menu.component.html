@@ -51,7 +51,7 @@
 </mat-step>
   <mat-step label="Select Your Name">
       <mat-select placeholder="Your Name"[(ngModel)]="MenuInput.MemberIdSelect" name="memberId">
-    <mat-option *ngFor="let members of member" [value]="members.memberId">{{members.memberName}}</mat-option>
+    <mat-option [value]="memberLogin.mid">{{memberLogin.username}}</mat-option>
     </mat-select>
     <div>
         <button mat-button matStepperPrevious>Back</button>

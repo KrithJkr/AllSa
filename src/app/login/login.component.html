@@ -1,0 +1,15 @@
+<mat-card class ="logincard">
+  <div class="example-container">
+<form (submit)="loginUser($event)">
+  <mat-form-field>
+<input matInput placeholder="Username" input type="username" id="username">
+</mat-form-field><br/>
+<mat-form-field>
+<input matInput placeholder="Password" input type="password" id="password">
+</mat-form-field><br/>
+<button mat-raised-button (click)="login()" input type="submit" color="primary">Login</button>
+<a mat-raised-button routerLink="/resta" color="accent">Register</a>
+</form>
+</div>
+</mat-card>
+

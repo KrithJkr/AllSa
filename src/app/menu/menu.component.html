@@ -5,7 +5,7 @@
       <div *ngFor="let menu of Menus">
         <mat-card-content>
           <mat-divider></mat-divider>
-          <a mat-button routerLink="menu-info/{{menu.menuId}}">• {{menu.menuName}}  &nbsp; &nbsp; &nbsp; &nbsp; เขียนโดย : {{menu.memberId.memberName}}</a>
+          <a mat-button routerLink="menu-info/{{menu.menuId}}">• {{menu.menuName}}  &nbsp; &nbsp; &nbsp; &nbsp; เขียนโดย : {{menu.memberId.username}}</a>
         <mat-divider></mat-divider>
         </mat-card-content>
       </div>
