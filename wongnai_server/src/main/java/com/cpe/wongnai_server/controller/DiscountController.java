@@ -21,7 +21,12 @@ class DiscountController{
     private CouponRepository couponRepository;
     @Autowired
     private DisCategoryRepository discategoryRepository;
-    
+
+  @GetMapping("discountbyrid/{rid}")
+  public List<Discount> showDiscountByRid(@PathVariable Long rid) {
+    return discountRepository.findByDiscountrestaurant_Rid(rid);
+  }
+
     @GetMapping("/Discount")
     public List<Discount> showAllDiscount(){
         return discountRepository.findAll().stream().collect(Collectors.toList());
@@ -56,7 +61,7 @@ class DiscountController{
         discount.setDiscountCategory(discategoryRepository.getOne(Tid));
         discount.setDiscountCoupon(couponRepository.findByCode(code));
         discount.setDiscountPeriod(periodRepository.findBySdate(Sdate));
-        discount.setDiscountRestaurant(restaurantRepository.findByRestaurantName(restaurant));
+        discount.setDiscountrestaurant(restaurantRepository.findByRestaurantName(restaurant));
         return discountRepository.save(discount);
         
 
@@ -78,7 +83,7 @@ class DiscountController{
         discount.setTitle(Title);
         discount.setDiscountCategory(discategoryRepository.getOne(Tid));
         discount.setDiscountPeriod(periodRepository.findBySdate(Sdate));
-        discount.setDiscountRestaurant(restaurantRepository.findByRestaurantName(restaurant));
+        discount.setDiscountrestaurant(restaurantRepository.findByRestaurantName(restaurant));
         return discountRepository.save(discount);
 
     }

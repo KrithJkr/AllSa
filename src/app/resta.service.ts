@@ -41,4 +41,8 @@ constructor(private http: HttpClient) {
   setMemberForProfile(id){
     localStorage.setItem('key',id);
   }
+
+  getDiscountByRid(rid): Observable<any>{
+    return this.http.get('//localhost:8080/discountbyrid/'+rid);
+  }
 }

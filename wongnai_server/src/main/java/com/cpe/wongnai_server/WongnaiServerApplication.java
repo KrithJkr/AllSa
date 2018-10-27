@@ -185,19 +185,19 @@ public static void main(String[] args) {
             if (Name == "buy one get one") {
                 discount.setTitle("purchase 1 get free 1");
                 discount.setDiscountCategory(DisCategoryRepository.getOne(4L));
-                discount.setDiscountRestaurant(RestaurantRepository.getOne(1L));
+                discount.setDiscountrestaurant(RestaurantRepository.getOne(1L));
                 DiscountRepository.save(discount);
             }
             if (Name == "50% off!") {
                 discount.setTitle("you can buy product in half price");
                 discount.setDiscountCategory(DisCategoryRepository.getOne(1L));
-                discount.setDiscountRestaurant(RestaurantRepository.getOne(2L));
+                discount.setDiscountrestaurant(RestaurantRepository.getOne(2L));
                 DiscountRepository.save(discount);
             }
             if (Name == "5% off with Holiday Coupon!") {
                 discount.setTitle("just show coupon code to earn 5% discount");
                 discount.setDiscountCategory(DisCategoryRepository.getOne(3L));
-                discount.setDiscountRestaurant(RestaurantRepository.getOne(2L));
+                discount.setDiscountrestaurant(RestaurantRepository.getOne(2L));
                 DiscountRepository.save(discount);
             }
             DiscountRepository.findAll().forEach(System.out::println);

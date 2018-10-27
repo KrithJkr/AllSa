@@ -12,6 +12,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public
 interface CommentRepository extends JpaRepository<Comment,Long> {
+
     List<Comment> findByRestaurants_Rid(Long rid);
 
     @Query("SELECT ROUND(AVG(c.rating),2) FROM Comment c WHERE c.restaurants.rid = :id")
