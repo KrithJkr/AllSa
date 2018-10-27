@@ -33,4 +33,9 @@ class MemberController {
         member.setMemberOf(memberOf);
         return memberrepository.save(member);
     }
+    @GetMapping("/memberbyemail/{email}")
+    public Member getMemberByUser(@PathVariable String email) {
+      Optional<Member> member = memberrepository.findByEmail(email);
+      return member.get();
+    }
 }

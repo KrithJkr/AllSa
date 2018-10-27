@@ -23,6 +23,7 @@ export class CreateprofileComponent implements OnInit {
     number: ''
   }
   memberLogin:any;
+ 
 
   constructor(private createService: CreateService , private httpClient: HttpClient,private restaService:RestaService) {}
   ngOnInit() {
@@ -31,6 +32,8 @@ export class CreateprofileComponent implements OnInit {
     this.getAllMember();
     this.restaService.getMemberById(this.restaService.getMemberLoginId()).subscribe(
       data => this.memberLogin = data)
+      this.createService.getMemberByEmail(this.createService.getEmailProfile()).subscribe(
+        data => this.memberLogin = data)
   }
   save() {
     // tslint:disable-next-line:max-line-length
@@ -41,11 +44,11 @@ export class CreateprofileComponent implements OnInit {
       this.httpClient.post('http://localhost:8080/profile/create/' + this.memberLogin.mid + '/'  +  this.memberinfo.firstname + '/' + this.memberinfo.lastname + '/' + this.memberinfo.age + '/' + this.selectAddress  + '/' + this.memberinfo.number + '/' + this.selectBank , null).subscribe(
         data => {
           console.log('PUT Request is successful', data);
-           document.location.href = 'http://localhost:4200/viewprofile'; 
+           document.location.href = 'http://localhost:4200/login'; 
       },
       error => {
           console.log('Error', error);
-           document.location.href = 'http://localhost:4200/viewprofile'; 
+           document.location.href = 'http://localhost:4200/login'; 
       }
       );
     }

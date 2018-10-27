@@ -28,11 +28,12 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 import { RegisterComponent } from './register/register.component';
 import { CreateprofileComponent } from './createprofile/createprofile.component';
-import { GoogleComponent } from './google/google.component';
-import { FacebookComponent } from './facebook/facebook.component';
 import { ViewprofileComponent } from './viewprofile/viewprofile.component';
+import { FacebookComponent } from './facebook/facebook.component';
+import { GoogleComponent } from './google/google.component';
 import { RegisterService } from './register.service';
 import { CreateService } from './create.service';
 import { ViewprofileService } from './viewprofile.service';
@@ -131,12 +132,17 @@ component: Page3Component
     Page3Component,
     LoginComponent,
     HomeComponent,
+    ToolbarComponent,
     RegisterComponent,
     CreateprofileComponent,
-    GoogleComponent,
+    ViewprofileComponent,
     FacebookComponent,
+<<<<<<< HEAD
     ViewprofileComponent,
     RegistresComponent
+=======
+    GoogleComponent
+>>>>>>> 4c27ddb21e74beccc7f8c0554363c2fcd6645d85
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,10 @@
 .viewform{
-    max-width: width 500px;
-    background-color: #4e9ce6;
-    margin-top: 30px;
+    max-width: width 400px;
+    background-color: #393a3b;
+    margin-top: 50px;
   }
   
-  
+  .center{
+    width: 75%;
+    margin: 17.5px auto;
+  }

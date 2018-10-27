@@ -21,4 +21,13 @@ constructor(private http: HttpClient) {
     return this.http.get('//localhost:8080/address');
   }
 
+  setEmailProfile(email){
+    localStorage.setItem('key',email)
+  }
+  getEmailProfile(){
+    return localStorage.getItem('key')
+  }
+  getMemberByEmail(email){
+    return this.http.get('//localhost:8080/memberbyemail/'+email);
+  }
 }
