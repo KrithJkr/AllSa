@@ -61,7 +61,7 @@ public static void main(String[] args) {
           });
             meatRepository.findAll().forEach(System.out::println);
 
-            Stream.of("Pae","Nay","Pee","Best","Copter","Jump").forEach(username -> {
+            Stream.of("Pae","Nay","Phee","Best","Copter","Jump").forEach(username -> {
               Member member = new Member();
               member.setUsername(username);
               memberRepository.save(member);
@@ -80,7 +80,7 @@ public static void main(String[] args) {
                 member.setEmail("Ter@gmail.com");
                 member.setMemberOf("GOOGLE");
             }
-            else if (username == "Pee") {
+            else if (username == "Phee") {
                 member.setPassword("444");
                 member.setEmail("Pee@hotmail.com");
                 member.setMemberOf("GOOGLE");
@@ -136,7 +136,7 @@ public static void main(String[] args) {
                 restaurant.setRtel("055296214");
                 restaurant.setMenus(menuRepository.getOne(1L));
                 restaurant.setMemberowner(memberRepository.getOne(2L));
-                restaurant.setRestaurantImg("https://s3-ap-southeast-1.amazonaws.com/wekorat/wp-content/uploads/2014/11/19160638/IMG_4445-600x450.jpg");
+                restaurant.setRestaurantImg("https://www.scb.co.th/content/dam/scb/personal-banking/stories-tips/rice-index/80w_696645559.jpg");
                 restaurant.setCategories(ResCategoryRepository.getOne(1L));
                 RestaurantRepository.save(restaurant);
             }
