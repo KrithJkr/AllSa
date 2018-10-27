@@ -22,7 +22,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'resta',
+    redirectTo: 'menu',
     pathMatch: 'full'
     },
     {
