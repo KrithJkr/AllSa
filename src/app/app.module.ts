@@ -27,6 +27,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 const appRoutes: Routes = [
   {
@@ -96,7 +97,8 @@ component: Page3Component
     Page2Component,
     Page3Component,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

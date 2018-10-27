@@ -1,6 +1,6 @@
 .example-card {
     width: 400px;
-    background-color: #ff8000;
+    background-color: Primary;
     position: absolute;
     max-height: 1500px;
 }
@@ -48,10 +48,19 @@ position: absolute;
       left: 0px;
       width: 500px;
       height: 280px;
-background-color: #E65100;
+background-color: rgb(36, 35, 35);
 }
 .deletebutton{
     position: absolute;
     right: 30px;
     margin-top: -60px;
 }
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox.
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+  
+  p {
+    font-size: 14px;
+  }
