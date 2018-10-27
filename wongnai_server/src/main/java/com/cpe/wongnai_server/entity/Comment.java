@@ -16,7 +16,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "comment_seq")
     private @NonNull Long cmid;
     private @NonNull String text;
-    //private String img;
+    private String img;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "memberId")
