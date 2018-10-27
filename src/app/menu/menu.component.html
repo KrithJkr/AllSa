@@ -1,0 +1,15 @@
+
+<mat-card class="example-card center">
+    <mat-card-title>รายชื่ออาหาร</mat-card-title>
+    <mat-list>
+      <div *ngFor="let menu of Menus">
+        <mat-card-content>
+          <mat-divider></mat-divider>
+          <a mat-button routerLink="menu-info/{{menu.menuId}}">• {{menu.menuName}}  &nbsp; &nbsp; &nbsp; &nbsp; เขียนโดย : {{menu.memberId.memberName}}</a>
+        <mat-divider></mat-divider>
+        </mat-card-content>
+      </div>
+    </mat-list>
+
+</mat-card>
+

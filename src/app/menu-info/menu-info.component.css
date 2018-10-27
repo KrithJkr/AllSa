@@ -1,0 +1,26 @@
+
+.example-card {
+  max-width: 400px;
+  align-content: center;
+
+}
+
+
+.center{
+  width: 75%;
+  margin: 10px auto;
+}
+p {
+  font-size: 20px;
+  font-family: Kanit, sans-serif;
+}
+h1{
+  font-size: 18px;
+  font-family: Kanit, sans-serif;
+
+}
+h2{
+  font-size: 14px;
+  font-family: Niramit, sans-serif;
+
+}

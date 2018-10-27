@@ -1,0 +1,11 @@
+.example-card {
+  max-width: 400px;
+  align-content: center;
+
+}
+
+
+.center{
+  width: 75%;
+  margin: 10px auto;
+}

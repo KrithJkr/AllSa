@@ -1,0 +1,57 @@
+.example-card {
+    width: 400px;
+    background-color: #ff8000;
+    position: absolute;
+    max-height: 1500px;
+}
+
+.card2{
+  width: 650px;
+  margin-left: 750px;
+    background-color: black;
+    max-height: 1500;
+}
+.divide{
+    border-top: 2px solid;
+    color:brown;
+}
+.commentborder{
+border-style: groove;
+color:brown;
+border-radius: 7px;
+height:200;
+}
+.myform{
+    background-color: 	#FFA500;
+    border: 2px solid;
+}
+.myform2{
+    background-color: 	Black;
+    border: 2px solid;
+    height: 100;
+    margin: auto;
+}
+.commentcard{
+    background-color: 	white;
+max-height: 1500;
+}
+.commentImg{
+width: 100px;
+height: 100px;
+position: static;
+margin : auto;
+}
+
+.commentinput{
+position: absolute;
+      top: 480px;
+      left: 0px;
+      width: 500px;
+      height: 280px;
+background-color: #E65100;
+}
+.deletebutton{
+    position: absolute;
+    right: 30px;
+    margin-top: -60px;
+}

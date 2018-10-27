@@ -1,0 +1,74 @@
+<div align="center">
+<mat-card class="example-card">
+  <div align="center">
+    <img mat-card-image src="{{restaurantInfo.restaurantImg}}">
+    <mat-card-title>ร้าน : {{restaurantInfo.restaurantName}}</mat-card-title>
+    <mat-card-content>
+      <p>ที่อยู่ : {{restaurantInfo.address}}</p>
+      <p>ประเภทร้าน: {{restaurantInfo.categories.categoryName}}</p>
+      <p>คะแนน:  <mat-star-rating [rating]="restaurantRating"  [starCount]="5" [color]="accent"></mat-star-rating> {{restaurantRating}}</p>
+      </mat-card-content>
+
+  </div>
+
+
+</mat-card>
+
+<!-- <mat-card class="card2">
+    <mat-card-title>Comment</mat-card-title>
+  <br/>
+  <mat-card class="commentcard">
+
+    <mat-card-content>
+      <div *ngFor="let comment of comments">
+        <div class="commentborder">
+          <h3>{{comment.members.username}}</h3>
+          {{comment.text}}
+          <br/>
+          <img class="commentImg" src="{{comment.img}}">
+          <br/>
+          <mat-star-rating [rating]="comment.rating.ratinglevel"  [starCount]="5" [color]="accent"></mat-star-rating>
+          {{comment.rating.ratinglevel}}
+          <button mat-fab color="warn" (click)="delete(comment.cmid)" class="deletebutton">Delete</button>
+        </div>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+</mat-card>
+
+
+
+
+<mat-card class="commentinput">
+  <div align="center">
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Leave a comment" [(ngModel)]="mycomment.textSelect" ></textarea>
+    </mat-form-field>
+<br/>
+  </div>
+  <div align="center">
+
+  <mat-form-field>
+    <mat-select placeholder="Members" [(ngModel)]="usernameSelect" name="username">
+      <mat-option *ngFor="let member of members" [value]="member.username">{{member.username}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <br/>
+    <mat-form-field>
+      <input matInput placeholder="url รูปภาพ.jpg" [(ngModel)]="mycomment.imgSelect" >
+    </mat-form-field>
+    <a mat-raised-button href="//imgbb.com" target="_blank" color="accent" >เว็บฝากรูป</a>
+    <br/>
+    <mat-star-rating [rating]="rating"  [starCount]="5" [color]="accent" (ratingUpdated)="onRatingChanged($event)"></mat-star-rating>
+    <br/>
+    <br/>
+  <button mat-flat-button (click)="save()" color="primary">Comment</button>
+
+  </div>
+</mat-card> -->
+</div>

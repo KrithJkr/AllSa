@@ -1,0 +1,18 @@
+<mat-card class="example-card">
+  <div align="center">
+    <mat-card-title><h2>รายชื่อร้านอาหาร</h2></mat-card-title>
+    <mat-list>
+      <div *ngFor="let resta of restas">
+        <mat-card-content>
+          <mat-divider></mat-divider>
+          <a mat-button routerLink="/restainfo/{{resta.rid}}">• ร้าน {{resta.restaurantName}} : ที่อยู่
+            {{resta.address}} : ประเภทร้าน {{resta.categories.categoryName}}</a>
+          <mat-divider></mat-divider>
+        </mat-card-content>
+      </div>
+    </mat-list>
+  </div>
+
+</mat-card>
+
+

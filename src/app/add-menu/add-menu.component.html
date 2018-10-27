@@ -1,0 +1,71 @@
+<mat-card class="center">
+    <mat-card-title>Add Your Recipe</mat-card-title>
+  <mat-vertical-stepper>
+  <mat-step label="Insert your Recipe">
+    <mat-form-field>
+      <input matInput placeholder="Menu Name" [(ngModel)]="MenuInput.MenuNameSelect" >
+    </mat-form-field>
+    <div>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="Main Ingredient">
+      <mat-select placeholder="Main Ingredient"[(ngModel)]="MenuInput.MeatIdSelect" name="meatId">
+      <mat-option *ngFor="let meats of meat" [value]="meats.meatId">{{meats.meatName}}</mat-option>
+      </mat-select>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+
+    </div>
+  </mat-step>
+  <mat-step label="Categories Food">
+          <mat-select placeholder="Categories"[(ngModel)]="MenuInput.CatIdSelect" name="catid">
+          <mat-option *ngFor="let cat of categories" [value]="cat.catid">{{cat.catName}}</mat-option>
+          </mat-select>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+
+    </div>
+  </mat-step>
+  <mat-step label="How to Cooking">
+    <mat-form-field>
+        <textarea  matInput placeholder="How to Cooking"[(ngModel)]="MenuInput.CookingSelect" ></textarea>
+    </mat-form-field>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+    <mat-step label="Paste URL Pictures">
+        <mat-form-field>
+          <input matInput placeholder="Paste URL Pictures" [(ngModel)]="MenuInput.PicUrlSelect" >
+
+        </mat-form-field>
+        <a mat-stroked-button href="//imgbb.com" target="_blank" color="warn">Go to Web</a>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+</mat-step>
+  <mat-step label="Select Your Name">
+      <mat-select placeholder="Your Name"[(ngModel)]="MenuInput.MemberIdSelect" name="memberId">
+    <mat-option *ngFor="let members of member" [value]="members.memberId">{{members.memberName}}</mat-option>
+    </mat-select>
+    <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+    </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        You are now done.
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="save()">Save</button>
+        </div>
+      </mat-step>
+</mat-vertical-stepper>
+</mat-card>
+

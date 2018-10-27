@@ -1,0 +1,17 @@
+
+<mat-card class="example-card center">
+    <mat-card-header>
+    <mat-card-title><p>{{Menu.menuName}}</p></mat-card-title>
+      <mat-card-subtitle>เขียนโดย {{Menu.memberId.memberName}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{Menu.picUrl}}">
+    <mat-card-content>
+      <h1>Main Ingredent : {{Menu.meatId.meatName}}</h1>
+      <h1>Food Type : {{Menu.catId.catName}}</h1>
+      <h1>Cooking : <br></h1>
+      <h2>&nbsp; &nbsp; &nbsp; &nbsp; {{Menu.cookingId.cookingName}}</h2></mat-card-content>
+    <mat-card-actions>
+      <button mat-button routerLink="/menu">Menu</button>
+      <button mat-button routerLink="/add-menu">Add Menu</button>
+    </mat-card-actions>
+  </mat-card>

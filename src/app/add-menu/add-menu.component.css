@@ -1,0 +1,8 @@
+.center{
+  width: 75%;
+  margin: 10px auto;
+}
+textarea {
+  width: 300px;
+  height: 150px;
+}
