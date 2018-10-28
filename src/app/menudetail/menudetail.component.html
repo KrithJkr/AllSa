@@ -1,0 +1,33 @@
+<mat-card class="example-card center">
+    <mat-card-header>
+      <mat-card-title><p>{{menu.menuName}}</p></mat-card-title>
+    </mat-card-header>
+  <img mat-card-image src="{{menu.picUrl}}">
+      <mat-card-content>
+        <h1>Calories </h1>
+          <mat-card-title><p>{{menu.cal}}</p></mat-card-title>
+        <h1>Ingredent </h1>
+          <mat-card-title><p>{{menu.text.text}}</p></mat-card-title>
+        <h1>Nutrition </h1>
+
+          <mat-card-title><h2>Protein&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{menu.nutrition.protein}}</h2></mat-card-title>
+          <mat-card-title><h2>Carbohydrate &nbsp;&nbsp;&nbsp;&nbsp;{{menu.nutrition.carbohydrate}}</h2></mat-card-title>
+
+          <mat-card-title><h2>Vitamin&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{menu.nutrition.vitamin}}</h2></mat-card-title>
+
+          <mat-card-title><h2>Fruit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{menu.nutrition.fruit}}</h2></mat-card-title>
+
+          <mat-card-title><h2>Fat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{menu.nutrition.fat}}</h2></mat-card-title>
+        <h1>Story </h1>
+          <mat-card-title><p>{{menu.stext.stext}}</p></mat-card-title>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-button routerLink="/menulist">Menu</button>
+        <button mat-button routerLink="/addmenudetail">Add Menu</button>
+      </mat-card-actions>
+  </mat-card>

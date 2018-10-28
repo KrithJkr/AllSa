@@ -17,7 +17,8 @@ public static void main(String[] args) {
     MemberRepository memberRepository,MenuRepository menuRepository,CommentRepository CommentRepository,
     RestaurantRepository RestaurantRepository,RatingRepository RatingRepository,ResCategoryRepository ResCategoryRepository,
     DiscountRepository DiscountRepository,DisCategoryRepository DisCategoryRepository,CouponRepository CouponRepository,AddressRepository addressRepository,
-    CreditcardRepository creditcardRepository, ProfileRepository profileRepository) {
+    CreditcardRepository creditcardRepository, ProfileRepository profileRepository,IngredientRepository ingredientrepository,
+    InfoMenuRepository infomenurepository,NutritionRepository nutritionrepository,StoryRepository storyrepository) {
         return args ->{
 
             Stream.of( "percent","amount","code" ,"other").forEach(Type -> {
@@ -45,7 +46,7 @@ public static void main(String[] args) {
                 coupon.setCode(code);
                 CouponRepository.save(coupon);
             });
-            
+
             CouponRepository.findAll().forEach(System.out::println);
 
             Stream.of("Clean Food", "Normal Food", "Fast Food", "Fine Dinning").forEach(catName -> {
@@ -118,7 +119,7 @@ public static void main(String[] args) {
        menu.setMemberId(memberRepository.getOne(1L));
        menu.setCookingId(cookingRepository.getOne(1L));
        menuRepository.save(menu);
-
+         
         Stream.of("KorKok", "KaoGang").forEach(restaurantName -> {
             Restaurant restaurant = new Restaurant();
             restaurant.setRestaurantName(restaurantName);
@@ -298,9 +299,47 @@ public static void main(String[] args) {
 				}
 				profileRepository.save(profile);
 			});
-			profileRepository.findAll().forEach(System.out::println);
-    };  }
-}
+      profileRepository.findAll().forEach(System.out::println);
+
+
+      //set ingredient
+      Stream.of("แครอท,ไข่ต้ม,หัวหอม,กะหล่ำ","หมูสับ,ใบกะเพรา,ข้าว,ไข่ดาว","ไก่,ข้าว,กระเทียม","ปลา").forEach(ingredient_of_food-> {
+        Ingredient ingredient= new Ingredient();
+        ingredient.setText(ingredient_of_food);
+        ingredientrepository.save(ingredient);
+
+    });
+
+    //set story
+    Stream.of("เมื่อพูดถึง สลัด  เรามักนึกถึงเมนูผักเพื่อสุขภาพ หลายคนเลือกทาน สลัด เพื่อควบคุมน้ำหนักและระบบขับถ่ายที่ดีและมีใครทราบไหมค่ะว่าคำว่า “สลัด”มีที่มาที่ไปอย่างไรวันนี้เรามีบอกค่ะ คำว่า”สลัด” Salads มาจากภาษาฝรั่งเศส คือคำว่า Salada ซึ่งมีความหมายตรงกับภาษาละติน Salad ที่แปลว่า Salty หรือแปลว่ารสเค็มนั้นเอง ดังนั้นจึงเขียนได้อีกชื่อหนึ่งว่า Salted Herbs หรือ Herbasalta ซึ่งแปลว่า ผักที่ปรุงด้วยน้ำสลัดอันมีส่วนผสมของเกลือ กว่าจะได้เป็นว่า”สลัด”สั้นๆนี้หลากหลายที่มาเลยนะคะ เรามาดูประโยชน์ของการกินสลัดกันดีกว่าค่ะว่าจะมากมายหลากหลายเหมือนที่มาไหมนะ"
+     ).forEach(story_of_food-> {
+        Story story =new Story();
+        story.setStext(story_of_food);
+        storyrepository.save(story);
+
+     });
+
+    //set Ingredient
+    Nutrition nutrition = new Nutrition();
+    nutrition.setCarbohydrate("10%");
+    nutrition.setFat("0%");
+    nutrition.setFruit("30%");
+    nutrition.setProtein("20%");
+    nutrition.setVitamin("40%");
+    nutritionrepository.save(nutrition);
+
+        //set menu
+    Stream.of("salad").forEach(menuname -> {
+        InfoMenu infomenu = new InfoMenu();
+        infomenu.setMenus(menuRepository.getOne(1L));
+        infomenu.setStext(storyrepository.getOne(1L));
+        infomenu.setCal(80.5);
+        infomenu.setText(ingredientrepository.getOne(1L));
+        infomenu.setNutrition(nutritionrepository.getOne(1L));
+
+        infomenurepository.save(infomenu);
+    } ); };
+}};
 
 
 

@@ -1,0 +1,23 @@
+.card1{
+  margin:0 auto;
+  width:500px;
+  hight:100px;
+  box-shadow: 0 0 20px #666;
+  background: #FFB798;
+  border-radius:5px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-card {
+  max-width: 600px;
+  align-content: center;
+
+}
+
+
+.center{
+  width: 75%;
+  margin: 10px auto;
+}

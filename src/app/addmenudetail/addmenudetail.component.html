@@ -1,0 +1,116 @@
+<mat-toolbar color="primary">
+
+    <mat-toolbar-row>
+      <span class="example-spacer">
+        Wongnai
+      </span>
+      <div>
+        <a mat-raised-button routerLink="/menulist">Menu list</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div align="center">
+    <h1>
+      Add about food
+    </h1>
+
+  <mat-card class="card1">
+    <mat-card-title>
+      <h2>
+        Menu
+      </h2>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="select your menu" [(ngModel)]="mymenu.menuId" [ngModelOptions]="{standalone: true}" >
+              <mat-option *ngFor="let add of menu" [value]="add.menuId">
+                {{add.menuName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </form>
+  <br>
+
+  <h2>
+   Nutrition (%)
+  </h2>
+    <p>
+      Protein
+    </p>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="input your protein" [(ngModel)]="protein"  [ngModelOptions]="{standalone: true}"></textarea>
+        </mat-form-field>
+    <p>
+     cabohydrate
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="input your carbohydrate" [(ngModel)]="carbohydrate"  [ngModelOptions]="{standalone: true}"></textarea>
+        </mat-form-field>
+    <p>
+      vitamin
+    </p>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="input your vitamin" [(ngModel)]="vitamin"  [ngModelOptions]="{standalone: true}"></textarea>
+      </mat-form-field>
+    <p>
+      fruit
+    </p>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="input your fruit" [(ngModel)]="fruit"  [ngModelOptions]="{standalone: true}"></textarea>
+        </mat-form-field>
+
+    <p>
+      fat
+    </p>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="input your fat" [(ngModel)]="fat"  [ngModelOptions]="{standalone: true}"></textarea>
+        </mat-form-field>
+  <br>
+
+    <h2>
+      Ingredient
+    </h2>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="ingredient" [(ngModel)]="nutext" [ngModelOptions]="{standalone: true}" >
+            <mat-option *ngFor="let add of ingredient" [value]="add.text">
+              {{add.text}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+
+    <mat-divider class="divide"></mat-divider>
+      <br>
+        <h2>
+        Calories (kcal)
+        </h2>
+        <form class="example-form">
+           <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="input your calories" [(ngModel)]="mymenu.cal"  [ngModelOptions]="{standalone: true}"></textarea>
+           </mat-form-field>
+        </form>
+      <br>
+
+    <h2>
+      Story of food
+    </h2>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="input your story of food" [(ngModel)]="stext"  [ngModelOptions]="{standalone: true}"></textarea>
+          </mat-form-field>
+        </form>
+
+  <mat-divider class="divide"></mat-divider>
+  <br>
+  <div align ="center">
+    <button mat-flat-button (click)="save()" color="primary">Save</button>
+  <br>
+  <br>
+  </div>
+
