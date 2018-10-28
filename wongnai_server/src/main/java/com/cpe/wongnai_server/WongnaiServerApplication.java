@@ -303,7 +303,7 @@ public static void main(String[] args) {
 
 
       //set ingredient
-      Stream.of("แครอท,ไข่ต้ม,หัวหอม,กะหล่ำ","หมูสับ,ใบกะเพรา,ข้าว,ไข่ดาว","ไก่,ข้าว,กระเทียม","ปลา").forEach(ingredient_of_food-> {
+      Stream.of("ปลา","หมูสับ,ใบกะเพรา,ข้าว,ไข่ดาว","ไก่,ข้าว,กระเทียม","ไก่,น้ำปลา").forEach(ingredient_of_food-> {
         Ingredient ingredient= new Ingredient();
         ingredient.setText(ingredient_of_food);
         ingredientrepository.save(ingredient);
@@ -311,7 +311,7 @@ public static void main(String[] args) {
     });
 
     //set story
-    Stream.of("เมื่อพูดถึง สลัด  เรามักนึกถึงเมนูผักเพื่อสุขภาพ หลายคนเลือกทาน สลัด เพื่อควบคุมน้ำหนักและระบบขับถ่ายที่ดีและมีใครทราบไหมค่ะว่าคำว่า “สลัด”มีที่มาที่ไปอย่างไรวันนี้เรามีบอกค่ะ คำว่า”สลัด” Salads มาจากภาษาฝรั่งเศส คือคำว่า Salada ซึ่งมีความหมายตรงกับภาษาละติน Salad ที่แปลว่า Salty หรือแปลว่ารสเค็มนั้นเอง ดังนั้นจึงเขียนได้อีกชื่อหนึ่งว่า Salted Herbs หรือ Herbasalta ซึ่งแปลว่า ผักที่ปรุงด้วยน้ำสลัดอันมีส่วนผสมของเกลือ กว่าจะได้เป็นว่า”สลัด”สั้นๆนี้หลากหลายที่มาเลยนะคะ เรามาดูประโยชน์ของการกินสลัดกันดีกว่าค่ะว่าจะมากมายหลากหลายเหมือนที่มาไหมนะ"
+    Stream.of("ปลาทอดสุดแสนอร่อย จากยุคโคเอเชียวันหนึ่งมีชาวบ้านจับปลาได้น้อยกว่าทุกวันจึงเอาปลามาทอดกิน"
      ).forEach(story_of_food-> {
         Story story =new Story();
         story.setStext(story_of_food);
