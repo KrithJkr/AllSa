@@ -1,5 +1,5 @@
 package com.cpe.wongnai_server.Repository;
-import java.util.List;
+
 
 import com.cpe.wongnai_server.entity.InfoMenu;
 import org.springframework.data.jpa.repository.JpaRepository;

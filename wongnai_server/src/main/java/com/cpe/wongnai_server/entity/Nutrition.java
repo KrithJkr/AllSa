@@ -3,12 +3,11 @@ package com.cpe.wongnai_server.entity;
 import lombok.*;
 
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
+
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 
 @Entity
 @Getter @Setter

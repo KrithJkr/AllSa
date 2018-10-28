@@ -1,7 +1,7 @@
 package com.cpe.wongnai_server.entity;
 
 import lombok.*;
-import java.util.*;
+
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -9,11 +9,11 @@ import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-import java.util.Set;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 
 @Entity
 @Getter @Setter
