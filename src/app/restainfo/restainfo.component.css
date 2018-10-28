@@ -6,7 +6,7 @@
 }
 
 .card2{
-  width: 650px;
+  width: 550px;
   margin-left: 750px;
     background-color: black;
     max-height: 1500;
@@ -43,10 +43,9 @@ margin : auto;
 }
 
 .commentinput{
-position: absolute;
-      top:600px;
-      left: 0px;
-      width: 500px;
+position: relative;
+        left: 750px;
+      width: 550px;
       height: 280px;
 background-color: rgb(36, 35, 35);
 }

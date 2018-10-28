@@ -1,14 +1,7 @@
+<app-toolbar></app-toolbar>
 <mat-card class="example-card">
   <div align="center">
     <mat-card-title><h3>ลงทะเบียนร้านอาหาร</h3></mat-card-title>
-    <mat-form-field>
-      <mat-select placeholder="เจ้าของร้าน" [(ngModel)]="owa">
-        <mat-option *ngFor="let owe of owname" [value]="owe.mid"   >
-          {{owe.username}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
     <mat-form-field>
       <input matInput placeholder="ชื่อร้านอาหาร" [(ngModel)]="rname" >
     </mat-form-field>
@@ -40,6 +33,14 @@
     </mat-option>
   </mat-select>
 </mat-form-field>
+<br>
+<mat-form-field>
+    <mat-select placeholder="เจ้าของร้าน" [(ngModel)]="owa" name="username">
+        <mat-option [value]="memberLogin.mid">{{memberLogin.username}}</mat-option>
+        </mat-select>
+  </mat-form-field>
       <div align="right">
       <button mat-flat-button (click)="save()" color="primary">Save</button>
     </div>
+
+    

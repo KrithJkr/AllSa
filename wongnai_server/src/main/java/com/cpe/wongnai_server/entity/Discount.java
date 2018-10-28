@@ -20,8 +20,8 @@ public class Discount {
     private @NonNull String Title;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Restaurant.class)
-    @JoinColumn(name = "DR_ID", insertable = true)
-    private  Restaurant DiscountRestaurant;
+    @JoinColumn(name = "rid", insertable = true)
+    private  Restaurant discountrestaurant;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = DisCategory.class)
     @JoinColumn(name = "DCG_ID", insertable = true)

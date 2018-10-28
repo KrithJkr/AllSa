@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { PARAMETERS } from '@angular/core/src/util/decorators';
 import { HttpClient} from '@angular/common/http';
 import { RegistresService } from '../registres.service';
+import { RestaService } from '../resta.service';
 
 @Component({
   selector: 'app-registres',
@@ -19,6 +20,10 @@ export class RegistresComponent implements OnInit {
   owa: '';
   promo: '';
 
+  memberLogin:any;
+
+  
+
   packAddress: any = {
     addressSelect: '',
     picurl: ''
@@ -29,7 +34,7 @@ export class RegistresComponent implements OnInit {
   category: Array<any>;
   promos: Array<any>;
   restas: Array<any>;
-  constructor(private httpClient: HttpClient, private RegistresService: RegistresService) { }
+  constructor(private httpClient: HttpClient, private RegistresService: RegistresService,private restaService:RestaService) { }
 
   ngOnInit() {
     this.RegistresService.getAllRestaurant().subscribe(data => {
@@ -44,7 +49,8 @@ export class RegistresComponent implements OnInit {
           this.RegistresService.getAllCategories().subscribe(data => {
             this.category = data;
             })
-
+    this.restaService.getMemberById(this.restaService.getMemberLoginId()).subscribe(
+      data => this.memberLogin = data)
   }
   save() {
     if (this.owa === undefined || this.rname === '' || this.packAddress.addressSelect === ''

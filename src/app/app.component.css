@@ -5,11 +5,11 @@
   flex: 1 1 auto;
 }
 .image{
-  height:60em;
+  height:150em;
 
   width:auto;
   background-image:url('bg2.jpg');
-
+ 
    
 }
 p {

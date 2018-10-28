@@ -3,9 +3,13 @@
   <div align="center">
     <img mat-card-image src="{{restaurantInfo.restaurantImg}}">
     <mat-card-title>ร้าน : {{restaurantInfo.restaurantName}}</mat-card-title>
+    <p>เจ้าของร้าน {{restaurantInfo.memberowner.username}}</p>
     <mat-card-content>
       <p>ที่อยู่ : {{restaurantInfo.address}}</p>
+      <p>เบอร์โทร : {{restaurantInfo.rtel}}</p>
       <p>ประเภทร้าน: {{restaurantInfo.categories.categoryName}}</p>
+      <div *ngFor="let discount of discounts">
+      <p>โปรโมชั่น: {{discount.name}} <br/>{{discount.title}}</p></div>
       <p>คะแนน:  <mat-star-rating [rating]="restaurantRating"  [starCount]="5" [color]="accent"></mat-star-rating> {{restaurantRating}}</p>
       </mat-card-content>
 

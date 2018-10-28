@@ -23,7 +23,8 @@ export class RestainfoComponent implements OnInit {
   members: Array<any>;
   restaurantnumber: any;
 
-  
+  discounts: Array<any>;
+
   memberLogin:any;
  
 
@@ -48,6 +49,11 @@ export class RestainfoComponent implements OnInit {
 
     this.data.getMemberById(this.data.getMemberLoginId()).subscribe(
         data => { this.memberLogin = data})
+
+        this.data.getDiscountByRid(this.restaurantnumber).subscribe(
+          data => {this.discounts = data})
+
+          
     }
 
 
