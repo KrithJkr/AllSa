@@ -230,7 +230,7 @@ public static void main(String[] args) {
 					profile.setLastname("Kanklang");
 					profile.setAge(21l);
 					Creditcard creditcard = new Creditcard();
-					creditcard.setNumber(123456789l);
+					creditcard.setNumber(11111111L);
 					creditcard.setBank("SCB");
 					creditcardRepository.save(creditcard);
 					profile.setCreditcard(creditcardRepository.getOne(13L));
@@ -242,7 +242,7 @@ public static void main(String[] args) {
 					profile.setLastname("Noisia");
 					profile.setAge(21l);
 					Creditcard creditcard = new Creditcard();
-					creditcard.setNumber(987654321l);
+					creditcard.setNumber(22222222L);
 					creditcard.setBank("SCB");
 					creditcardRepository.save(creditcard);
 					profile.setCreditcard(creditcardRepository.getOne(14L));
@@ -254,7 +254,7 @@ public static void main(String[] args) {
 					profile.setLastname("Jeenkumroeng");
 					profile.setAge(21l);
 					Creditcard creditcard = new Creditcard();
-					creditcard.setNumber(155555555l);
+					creditcard.setNumber(33333333L);
 					creditcard.setBank("TMB");
 					creditcardRepository.save(creditcard);
 					profile.setCreditcard(creditcardRepository.getOne(15L));
@@ -266,7 +266,7 @@ public static void main(String[] args) {
 					profile.setLastname("Jarukulgowit");
 					profile.setAge(21l);
 					Creditcard creditcard = new Creditcard();
-					creditcard.setNumber(123123123l);
+					creditcard.setNumber(44444444L);
 					creditcard.setBank("TMB");
 					creditcardRepository.save(creditcard);
 					profile.setCreditcard(creditcardRepository.getOne(16L));
@@ -278,7 +278,7 @@ public static void main(String[] args) {
 					profile.setLastname("JanTree");
 					profile.setAge(21l);
 					Creditcard creditcard = new Creditcard();
-					creditcard.setNumber(159159159l);
+					creditcard.setNumber(55555555L);
 					creditcard.setBank("TMB");
 					creditcardRepository.save(creditcard);
 					profile.setCreditcard(creditcardRepository.getOne(17L));
@@ -290,7 +290,7 @@ public static void main(String[] args) {
 					profile.setLastname("Jamklang");
 					profile.setAge(21l);
 					Creditcard creditcard = new Creditcard();
-					creditcard.setNumber(147852963l);
+					creditcard.setNumber(6666666L);
 					creditcard.setBank("TMB");
 					creditcardRepository.save(creditcard);
 					profile.setCreditcard(creditcardRepository.getOne(18L));

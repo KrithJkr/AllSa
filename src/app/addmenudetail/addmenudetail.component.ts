@@ -44,7 +44,7 @@ export class AddmenudetailComponent implements OnInit {
         },
         error => {
             console.log('Error', error);
-            //window.location.reload();
+            document.location.href = 'http://localhost:4200/menulist'; 
         }
 
     );
