@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { PageService } from '../page.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { PARAMETERS } from '@angular/core/src/util/decorators';
 
@@ -24,7 +24,7 @@ export class Page2Component implements OnInit {
   restas:Array<any>;
   restautant: String;
 
-  constructor(private data: PageService,private httpClient: HttpClient) { }
+  constructor(private data: PageService,private httpClient: HttpClient,private router: Router) { }
 
   ngOnInit() {
     this.data.getCoupon().subscribe(data => {this.Coupon = data;})
@@ -45,7 +45,7 @@ export class Page2Component implements OnInit {
             },
             error => {
                 console.log('------------Error----------', error);
-                //window.location.reload();
+                this.router.navigate(['page1']);
             }
 
       );
@@ -58,7 +58,7 @@ export class Page2Component implements OnInit {
         },
         error => {
             console.log('**********Error***********', error);
-            //window.location.reload();
+            this.router.navigate(['page1']);
         }
 
   );}
