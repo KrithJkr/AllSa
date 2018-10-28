@@ -1,0 +1,29 @@
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.card1{
+  margin:0 auto;
+  width:800px;
+  hight:100px;
+  box-shadow: 0 0 20px #666;
+  background: #FFB798;
+  border-radius:5px;
+}
+.button{
+
+  width:75px;
+  height:65px;
+  box-shadow: 0 0 20px #666;
+  background: #F9E79F;
+  border-radius:5px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

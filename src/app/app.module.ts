@@ -1,3 +1,4 @@
+import { MenulistComponent } from './menulist/menulist.component';
 import { RegistresService } from './registres.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -38,7 +39,9 @@ import { RegisterService } from './register.service';
 import { CreateService } from './create.service';
 import { ViewprofileService } from './viewprofile.service';
 import { RegistresComponent } from './registres/registres.component';
-
+import { InfomenuService } from './infomenu.service';
+import { MenudetailComponent } from './menudetail/menudetail.component';
+import { AddmenudetailComponent } from './addmenudetail/addmenudetail.component';
 const appRoutes: Routes = [
   {
     path: '',
@@ -115,6 +118,18 @@ component: Page3Component
 {
   path: 'registres',
   component: RegistresComponent
+},
+{
+  path: 'menulist',
+  component: MenulistComponent
+},
+{
+  path: 'menudetail/:menuId',
+  component: MenudetailComponent
+},
+{
+  path: 'addmenudetail',
+  component: AddmenudetailComponent
 }
 ];
 
@@ -140,7 +155,11 @@ component: Page3Component
     ViewprofileComponent,
     RegistresComponent,
     GoogleComponent,
-    RegistresComponent
+    RegistresComponent,
+    MenulistComponent,
+    MenudetailComponent,
+    AddmenudetailComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -167,7 +186,7 @@ component: Page3Component
 
 
   ],
-  providers: [MenuService,RestaService,PageService,RegisterService, CreateService, ViewprofileService,RegistresService],
+  providers: [MenuService,RestaService,PageService,RegisterService, CreateService, ViewprofileService,RegistresService,InfomenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
