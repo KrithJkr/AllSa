@@ -35,7 +35,5 @@ public class Menu{
     private Cooking cookingId;
 	
 
-    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "cookingID")
-    private Cooking cookingId;
-    private Collection<Cooking> cookingCollection;*/
+    
 }

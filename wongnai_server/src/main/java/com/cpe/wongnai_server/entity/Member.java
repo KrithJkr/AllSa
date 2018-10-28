@@ -20,11 +20,5 @@ public class Member{
   private @NonNull String memberOf;
     
 
-   /* public Member(Long id,String password,String username,String email,String memberOf) {
-        this.mid = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.memberOf = memberOf;
-    }*/
+   
 }
